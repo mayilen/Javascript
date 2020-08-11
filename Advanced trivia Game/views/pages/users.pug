@@ -1,0 +1,10 @@
+html
+	head
+		title list
+		include ../partials/header		
+	body
+		//-links for all users
+		each elem in result
+			a(href= `/users/${elem._id}`) #{elem.username}
+			br
+	

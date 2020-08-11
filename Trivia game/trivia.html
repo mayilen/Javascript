@@ -1,0 +1,77 @@
+<html>
+<script src="trivia.js"> </script>
+<script src="/socket.io/socket.io.js"></script>
+<h1>trivia</h1><br />
+
+<body onload="init();">
+    <div1 id="timer"></div1>
+    <div id="divjoin">
+        <div id="load">
+            <input type="textbox" id="name"></input>
+            <button type="button" id="join">join</button>
+        </div>
+    </div>
+
+    <form2 id="form1" style="visibility: hidden;">
+        <label id="lbl">players score</label><br />
+        <div id="form2">
+            <label id="nothing"></label>
+        </div>
+    </form2>
+
+
+
+    <div id="questionload"></div>
+
+
+    <form3 id="form3" style="visibility: hidden;">
+        <ul id="displaymsg"></ul>
+        <div>
+            <input id="message" autocomplete="off" /><button onclick="sendMessage()">Send</button>
+        </div>
+    </form3>
+</body>
+
+<style>
+    form3 {
+
+        padding: 3px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #displaymsg {
+        list-style-type: none;
+        margin-bottom: 50px;
+    }
+
+    /*display the messages */
+    #displaymsg li {
+        padding: 5px 10px;
+    }
+
+    #displaymsg li:nth-child(odd) {
+        background: #eee;
+    }
+
+
+    form2 {
+        /*display the list of players on right side */
+        float: right;
+        border: 3px solid black;
+        padding: 10px 20px
+            /*space between border and text */
+    }
+
+    div1 {
+        /*adding an outline around the timer */
+        border: 1px solid black;
+        font-size: 110%;
+
+        padding: 10px 20px
+            /*space between border and text */
+    }
+</style>
+
+</html>

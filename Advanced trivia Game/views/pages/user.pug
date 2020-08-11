@@ -1,0 +1,21 @@
+body
+	include ../partials/header.pug
+	h1 profile for#{user.username}
+	if session.loggedin&&user.username==session.username
+		form(action="/users/"+user._id, method="POST")
+			| privacy:
+			br
+			input(type="radio" name="private" value="true" checked=user.privacy)
+			| on
+			br
+			input(type="radio" name="private" value="false" checked=!user.privacy)
+			| off
+			br
+			button(type="submit") save
+	p total quizzes: #{user.total_quizzes}
+	if user.total_quizzes==0
+		p average score: 0
+	else 
+		p average score: #{user.total_score/user.total_quizzes}
+	if session.loggedin&&user.username==session.username
+		a(href="/logout") logout     
